@@ -1,0 +1,76 @@
+:root{
+  --bg:#F2F1E9; --card:#FFFFFF; --card-2:#EAE8DC; --text:#1E2723; --muted:#666f68;
+  --accent:#028090; --accent2:#02C39A; --border:#DEDACB; --white:#fff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12201E; --card:#1B2C29; --card-2:#20332F; --text:#E9F3F0; --muted:#93A6A1;
+    --border:#2C433D; --white:#fff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12201E; --card:#1B2C29; --card-2:#20332F; --text:#E9F3F0; --muted:#93A6A1;
+  --border:#2C433D; --white:#fff;
+}
+*{box-sizing:border-box;}
+html{scroll-padding-top:24px;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,"Segoe UI",Calibri,Arial,sans-serif; line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.wrap{max-width:920px; margin:0 auto; padding:0 20px 80px;}
+header.top{display:flex; align-items:center; justify-content:space-between; padding:28px 0 10px; gap:12px; flex-wrap:wrap;}
+.logo{display:flex; align-items:center; gap:10px;}
+.logo .badge{
+  width:38px; height:38px; border-radius:10px; background:var(--accent); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px;
+}
+.logo .name{font-size:13px; color:var(--muted); line-height:1.3;}
+.logo .name b{color:var(--text); display:block; font-size:14px;}
+.year{font-size:12px; color:var(--muted); border:1px solid var(--border); padding:5px 12px; border-radius:20px;}
+
+.hero{padding:20px 0 8px;}
+.meta{font-size:12.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:10px;}
+h1{font-size:clamp(1.7em,4vw,2.5em); margin:0 0 14px; font-weight:800; line-height:1.15;}
+.lead{color:var(--muted); font-size:1.02em; max-width:680px; margin:0 0 18px;}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;}
+.tag{background:var(--card-2); border:1px solid var(--border); font-size:12.5px; padding:5px 12px; border-radius:20px; color:var(--text);}
+
+.stats{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 32px;}
+.stat{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px 18px; flex:1; min-width:120px;}
+.stat b{display:block; font-size:1.5em; color:var(--accent);}
+.stat span{font-size:12.5px; color:var(--muted);}
+
+h2.section{font-size:1.25em; margin:44px 0 16px; padding-top:20px; border-top:1px solid var(--border);}
+
+.card-link{
+  display:block; background:var(--card); border:1px solid var(--border); border-radius:14px;
+  padding:18px 20px; margin-bottom:12px; text-decoration:none; color:var(--text);
+}
+.card-link .k{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--accent); font-weight:700; margin-bottom:6px;}
+.card-link .t{font-weight:700; font-size:1.05em; margin-bottom:6px;}
+.card-link .d{color:var(--muted); font-size:.93em; margin-bottom:10px;}
+.card-link .row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+.chips{display:flex; gap:6px; flex-wrap:wrap; font-size:11.5px; color:var(--muted);}
+.chips span{background:var(--card-2); padding:3px 9px; border-radius:20px;}
+.arrow{color:var(--accent); font-weight:700; white-space:nowrap;}
+
+details.topic{background:var(--card); border:1px solid var(--border); border-radius:14px; margin-bottom:10px; overflow:hidden;}
+details.topic summary{
+  cursor:pointer; list-style:none; padding:16px 20px; display:flex; justify-content:space-between; gap:12px; align-items:center;
+}
+details.topic summary::-webkit-details-marker{display:none;}
+details.topic summary .ttl{font-weight:700;}
+details.topic summary .ttl .n{color:var(--accent); margin-right:8px;}
+details.topic summary .meta2{font-size:12px; color:var(--muted); white-space:nowrap;}
+details.topic summary .chev{transition:transform .15s ease; color:var(--muted);}
+details.topic[open] summary .chev{transform:rotate(90deg);}
+.lessons{padding:0 20px 16px;}
+.lesson{padding:10px 0; border-top:1px solid var(--border);}
+.lesson .lt{font-weight:600; font-size:.96em;}
+.lesson .lt .n{color:var(--muted); font-weight:400;}
+.lesson .lp{color:var(--muted); font-size:.88em; margin-top:3px;}
+
+footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--border); color:var(--muted); font-size:.85em; text-align:center;}
+a{color:var(--accent);}
